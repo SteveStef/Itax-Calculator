@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/index.css">
+  <title><%= title %>Home Page</title>
+
+</head>
+<div id="container">
+<body>
+
+  <h1> ITax Calculator </h1><br><br>
+  <nav>
+    <ul>
+      <li><a href="/results">All Users</a></li>
+    </ul>
+  </nav>
+
+  <form class="" action="/home" method="post">
+
+    <label for="name" id="nameplace">Name:</label><br>
+    <input type="text" name="name" value="" required placeholder="First/LastName"><br><br>
+
+    <label for="moneyPerHour"id="MPHplace">How much do you make an hour?</label><br>
+    <input type="number" required placeholder="Money Hourly" name="moneyPerHour"><br><br>
+
+    <label for="hoursPerWeek" id="HPWplace">How many hours a week do you work?</label><br>
+    <input type="number" required placeholder="Hours Weekly"name="hoursPerWeek" ><br><br>
+
+    <label for="Single/Married"id="singlemarried">Are you Single or Married?</label><br>
+
+    <select placeholder="Single/Married"required name="single">
+        <option value="Single">Single</option>
+        <option value="Married">Married</option>
+      </select><br><br>
+
+  <input type="submit">
+
+
+  </form>
+
+<!--<button id="button" >Submit</button>-->
+</body>
+<footer>Copyright &copy; 2020 ITax</footer>
+</div>
+</html>
