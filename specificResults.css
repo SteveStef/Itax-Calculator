@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+#container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  text-align:center;
+  font-family: 'Noto Serif', serif;
+  background-color: #101820FF;
+}
+input[type="radio"] {
+    display: none;
+}
+label {
+  padding: 5px;
+  color: white;
+  margin:5px;
+  display: inline-block;
+}
+
+
+input[type="radio"]:checked + label {
+    background-color: darkblue;
+    cursor: default;
+    color: #E6E6E6;
+}
+#button{
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+input[type=text],input[type=Number], select {
+width: 50%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 50%;
+background-color: green;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: darkgreen;
+}
+#nameplace {
+margin-right: 530px;
+}
+#HPWplace{
+margin-right: 320px;
+}
+#MPHplace{
+margin-right: 350px;
+}
+#singlemarried{
+margin-right: 400px;
+}
+#dependents{
+margin-right: 350px;
+}
+h1 {
+font-size: 40px;
+}
+nav{
+display: flex;
+margin-bottom: 40px;
+margin-top: -65px;
+padding-bottom: -10px;
+border-bottom: 1px solid #ddd;
+text-transform: uppercase;
+text-align: right;
+}
+nav ul{
+display: flex;
+align-items: right;
+color: white;
+text-align: right;
+}
+nav li{
+list-style-type: none;
+color: white;
+text-align: right;
+}
+nav h1{
+font-size: 3em;
+color: white;
+text-align: right;
+}
+nav p, nav a {
+color: white; /*#777*/
+font-weight: 100;
+text-decoration: none;
+position: absolute;
+right: 400px;
+top: 90px;
+}
+nav a:hover {
+color: #777;
+}
+footer{
+text-align: center;
+margin: 80px auto 20px;
+}
+h1, footer{
+  color:lightsalmon;
+}
+#list {
+text-align:left;
+font-size: 20px;
+text-decoration: none;
+color: green;
+}
+#list a {
+text-decoration: none;
+color: crimson;
+}
+#list a:hover {
+color: darkred;
+}
+h2 {
+color: white;
+text-align: left;
+}
+#info p{
+color: white;
+text-align:left;
+}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 55%;
+  color:white;
+  margin-left: 300px;
+  text-align:left;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  padding-right:200px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+#customers tr:hover{
+  background-color: lightsalmon;
+  font-weight: bold;
+  color:black;
+}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
