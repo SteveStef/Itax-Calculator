@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/specificResults.css">
+  <title><%= title %> Specifiic Results Page</title>
+</head>
+<body>
+  <div id="container">
+  <body>
+
+    <h1> ITax Calculator </h1><br><br>
+    <nav>
+      <ul>
+        <li><a href="/results">Back</a></li>
+      </ul>
+    </nav>
+    <h2>Results:</h2>
+<div id="info">
+<!--Displaying each element in the array-->
+  <% if (idResult.MoneyPerHour >= 0) {%>
+    <!--Setting variables-->
+    <% const moneyPerWeek = idResult.HoursPerWeek * idResult.MoneyPerHour; %>
+    <% const moneyPerMonth = moneyPerWeek * 4.34524;%>
+    <% const grossPayYr = moneyPerWeek * 52; %>
+    <%var err = true;%>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ---->
+<!--- - - - - - - - - - - - - -Single Tax Bracket------------------------------>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ---->
+    <%if (idResult.Single == 'single' || idResult.Single == 'Single') { %>
+      <%var err = false;%>
+
+      <!--First single gross pay conditional-->
+      <%if (grossPayYr <= 9875) {%>
+        <% netPayYr = grossPayYr * .10; %>
+        <% finalPayYr = grossPayYr - netPayYr; %>
+        <div id="theTable">
+        <table id="customers">
+          <tr>
+            <th>Results</th>
+            <th>Money</th>
+          </tr>
+          <tr>
+            <td> Income/Hr</td>
+            <td>$<%=idResult.MoneyPerHour%></td>
+          </tr>
+          <tr>
+            <td>Hours/Weekly</td>
+            <td>$<%=idResult.HoursPerWeek%></td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td><%= idResult.Single %></td>
+          </tr>
+          <tr>
+            <td>Weekly earnings</td>
+            <td>$<%= Math.round(moneyPerWeek) %></td>
+          </tr>
+          <tr>
+            <td>Monthly earnings</td>
+            <td>$<%= Math.round(moneyPerMonth) %></td>
+          </tr>
+          <tr>
+            <td>Yearly gross income</td>
+            <td>$<%= Math.round(grossPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Yearly net income</td>
+            <td>$<%= Math.round(finalPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Backet Type</td>
+            <td>10%</td>
+          </tr>
+        </table>
+        </div>
+      <% } %>
+      <!--Second single gross pay conditional-->
+       <%if (grossPayYr >= 9876 && grossPayYr <= 40125) {%>
+         <% netPayYr = grossPayYr * .12; %>
+         <% finalPayYr = grossPayYr - netPayYr; %>
+         <div id="theTable">
+         <table id="customers">
+           <tr>
+             <th>Results</th>
+             <th>Money</th>
+           </tr>
+           <tr>
+             <td> Income/Hr</td>
+             <td>$<%=idResult.MoneyPerHour%></td>
+           </tr>
+           <tr>
+             <td>Hours/Weekly</td>
+             <td>$<%=idResult.HoursPerWeek%></td>
+           </tr>
+           <tr>
+             <td>Status</td>
+             <td><%= idResult.Single %></td>
+           </tr>
+           <tr>
+             <td>Weekly earnings</td>
+             <td>$<%= Math.round(moneyPerWeek) %></td>
+           </tr>
+           <tr>
+             <td>Monthly earnings</td>
+             <td>$<%= Math.round(moneyPerMonth) %></td>
+           </tr>
+           <tr>
+             <td>Yearly gross income</td>
+             <td>$<%= Math.round(grossPayYr) %></td>
+           </tr>
+           <tr>
+             <td>Yearly net income</td>
+             <td>$<%= Math.round(finalPayYr) %></td>
+           </tr>
+           <tr>
+             <td>Backet Type</td>
+             <td>12%</td>
+           </tr>
+         </table>
+         </div>
+      <% } %>
+      <!--Thrid single gross pay conditional-->
+      <%if (grossPayYr >= 40126 && grossPayYr <= 85525) {%>
+        <% netPayYr = grossPayYr * .22; %>
+        <% finalPayYr = grossPayYr - netPayYr; %>
+        <div id="theTable">
+        <table id="customers">
+          <tr>
+            <th>Results</th>
+            <th>Money</th>
+          </tr>
+          <tr>
+            <td> Income/Hr</td>
+            <td>$<%=idResult.MoneyPerHour%></td>
+          </tr>
+          <tr>
+            <td>Hours/Weekly</td>
+            <td>$<%=idResult.HoursPerWeek%></td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td><%= idResult.Single %></td>
+          </tr>
+          <tr>
+            <td>Weekly earnings</td>
+            <td>$<%= Math.round(moneyPerWeek) %></td>
+          </tr>
+          <tr>
+            <td>Monthly earnings</td>
+            <td>$<%= Math.round(moneyPerMonth) %></td>
+          </tr>
+          <tr>
+            <td>Yearly gross income</td>
+            <td>$<%= Math.round(grossPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Yearly net income</td>
+            <td>$<%= Math.round(finalPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Backet Type</td>
+            <td>22%</td>
+          </tr>
+        </table>
+        </div>
+     <% } %>
+     <!--Fourth single gross pay conditional-->
+     <%if (grossPayYr >= 85526 && grossPayYr <= 163300) {%>
+       <% netPayYr = grossPayYr * .24; %>
+       <% finalPayYr = grossPayYr - netPayYr; %>
+       <div id="theTable">
+       <table id="customers">
+         <tr>
+           <th>Results</th>
+           <th>Money</th>
+         </tr>
+         <tr>
+           <td> Income/Hr</td>
+           <td>$<%=idResult.MoneyPerHour%></td>
+         </tr>
+         <tr>
+           <td>Hours/Weekly</td>
+           <td>$<%=idResult.HoursPerWeek%></td>
+         </tr>
+         <tr>
+           <td>Status</td>
+           <td><%= idResult.Single %></td>
+         </tr>
+         <tr>
+           <td>Weekly earnings</td>
+           <td>$<%= Math.round(moneyPerWeek) %></td>
+         </tr>
+         <tr>
+           <td>Monthly earnings</td>
+           <td>$<%= Math.round(moneyPerMonth) %></td>
+         </tr>
+         <tr>
+           <td>Yearly gross income</td>
+           <td>$<%= Math.round(grossPayYr) %></td>
+         </tr>
+         <tr>
+           <td>Yearly net income</td>
+           <td>$<%= Math.round(finalPayYr) %></td>
+         </tr>
+         <tr>
+           <td>Backet Type</td>
+           <td>24%</td>
+         </tr>
+       </table>
+       </div>
+    <% } %>
+    <!--Fifth single gross pay conditional-->
+    <%if (grossPayYr >= 163301 && grossPayYr <= 207350) {%>
+      <% netPayYr = grossPayYr * .32; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>32%</td>
+        </tr>
+      </table>
+      </div>
+   <% } %>
+     <!--Sixth single gross pay conditional-->
+     <%if (grossPayYr >= 207351 && grossPayYr <= 518400) {%>
+       <% netPayYr = grossPayYr * .35; %>
+       <% finalPayYr = grossPayYr - netPayYr; %>
+       <div id="theTable">
+       <table id="customers">
+         <tr>
+           <th>Results</th>
+           <th>Money</th>
+         </tr>
+         <tr>
+           <td> Income/Hr</td>
+           <td>$<%=idResult.MoneyPerHour%></td>
+         </tr>
+         <tr>
+           <td>Hours/Weekly</td>
+           <td>$<%=idResult.HoursPerWeek%></td>
+         </tr>
+         <tr>
+           <td>Status</td>
+           <td><%= idResult.Single %></td>
+         </tr>
+         <tr>
+           <td>Weekly earnings</td>
+           <td>$<%= Math.round(moneyPerWeek) %></td>
+         </tr>
+         <tr>
+           <td>Monthly earnings</td>
+           <td>$<%= Math.round(moneyPerMonth) %></td>
+         </tr>
+         <tr>
+           <td>Yearly gross income</td>
+           <td>$<%= Math.round(grossPayYr) %></td>
+         </tr>
+         <tr>
+           <td>Yearly net income</td>
+           <td>$<%= Math.round(finalPayYr) %></td>
+         </tr>
+         <tr>
+           <td>Backet Type</td>
+           <td>35%</td>
+         </tr>
+       </table>
+       </div>
+    <% } %>
+    <!--Seventh single gross pay conditional-->
+    <%if (grossPayYr >= 518401) {%>
+      <% netPayYr = grossPayYr * .37; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>37%</td>
+        </tr>
+      </table>
+      </div>
+   <% } %>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ---->
+<!--- - - - - - - - - - - - - -Married Tax Bracket----------------------------->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ---->
+    <% } else if(idResult.Single == 'married' || idResult.Single == 'Married'){%>
+      <%var err = false;%>
+
+      <!--First married gross pay conditional-->
+      <% if(grossPayYr <= 19750) { %>
+        <% netPayYr = grossPayYr * .10; %>
+        <% finalPayYr = grossPayYr - netPayYr; %>
+        <div id="theTable">
+        <table id="customers">
+          <tr>
+            <th>Results</th>
+            <th>Money</th>
+          </tr>
+          <tr>
+            <td> Income/Hr</td>
+            <td>$<%=idResult.MoneyPerHour%></td>
+          </tr>
+          <tr>
+            <td>Hours/Weekly</td>
+            <td>$<%=idResult.HoursPerWeek%></td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td><%= idResult.Single %></td>
+          </tr>
+          <tr>
+            <td>Weekly earnings</td>
+            <td>$<%= Math.round(moneyPerWeek) %></td>
+          </tr>
+          <tr>
+            <td>Monthly earnings</td>
+            <td>$<%= Math.round(moneyPerMonth) %></td>
+          </tr>
+          <tr>
+            <td>Yearly gross income</td>
+            <td>$<%= Math.round(grossPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Yearly net income</td>
+            <td>$<%= Math.round(finalPayYr) %></td>
+          </tr>
+          <tr>
+            <td>Backet Type</td>
+            <td>10%</td>
+          </tr>
+        </table>
+        </div>
+    <% } %>
+    <!--Second married gross pay conditional-->
+    <% if(grossPayYr >= 19751 && grossPayYr <= 80250) { %>
+      <% netPayYr = grossPayYr * .12; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>12%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+    <!--Third married gross pay conditional-->
+    <% if(grossPayYr >= 80251 && grossPayYr <= 171050) { %>
+      <% netPayYr = grossPayYr * .22; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>22%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+    <!--Fourth married gross pay conditional-->
+    <% if(grossPayYr >= 171051 && grossPayYr <= 326600) { %>
+      <% netPayYr = grossPayYr * .24; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>24%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+    <!--Fifth married gross pay conditional-->
+    <% if(grossPayYr >= 326601 && grossPayYr <= 414700) { %>
+      <% netPayYr = grossPayYr * .32; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>32%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+    <!--Sixth married gross pay conditional-->
+    <% if(grossPayYr >= 414701 && grossPayYr <= 622050) { %>
+      <% netPayYr = grossPayYr * .35; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>35%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+    <!--Seven married gross pay conditional-->
+    <% if(grossPayYr >= 622050) { %>
+      <% netPayYr = grossPayYr * .37; %>
+      <% finalPayYr = grossPayYr - netPayYr; %>
+      <div id="theTable">
+      <table id="customers">
+        <tr>
+          <th>Results</th>
+          <th>Money</th>
+        </tr>
+        <tr>
+          <td> Income/Hr</td>
+          <td>$<%=idResult.MoneyPerHour%></td>
+        </tr>
+        <tr>
+          <td>Hours/Weekly</td>
+          <td>$<%=idResult.HoursPerWeek%></td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><%= idResult.Single %></td>
+        </tr>
+        <tr>
+          <td>Weekly earnings</td>
+          <td>$<%= Math.round(moneyPerWeek) %></td>
+        </tr>
+        <tr>
+          <td>Monthly earnings</td>
+          <td>$<%= Math.round(moneyPerMonth) %></td>
+        </tr>
+        <tr>
+          <td>Yearly gross income</td>
+          <td>$<%= Math.round(grossPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Yearly net income</td>
+          <td>$<%= Math.round(finalPayYr) %></td>
+        </tr>
+        <tr>
+          <td>Backet Type</td>
+          <td>37%</td>
+        </tr>
+      </table>
+      </div>
+    <% } %>
+
+    <%} if (err == true) {%>
+    <p>Connot display further information due to invalid answer of "<%= idResult.Single %>" </p>
+
+    <!--If they are not a dependent-->
+    <%} if (idResult.dependent == 'no' || idResult.dependent == 'No'){%>
+
+    <!--If they are a dependent-->
+    <%} else if(idResult.Dependent == 'yes' || idResult.Dependent == 'Yes') { %>
+    <% } %>
+<%}%> <!--end of contaier conditinal-->
+
+<%if(idResult.MoneyPerHour <= 0 || idResult.HoursPerWeek <= 0) {%>
+  <p>Cannot display calculations of a negitive integer</p>
+<%  } %>
+
+</body>
+</div>
+</div>
+
+  <footer>Copyright &copy; 2020 ITax</footer>
+</html>
