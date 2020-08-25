@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+#container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  text-align:center;
+  font-family: 'Noto Serif', serif;
+  background-color: #101820FF;
+}
+input[type="radio"] {
+    display: none;
+}
+label {
+  padding: 5px;
+  color: white;
+  margin:5px;
+  display: inline-block;
+}
+
+
+input[type="radio"]:checked + label {
+    background-color: darkblue;
+    cursor: default;
+    color: #E6E6E6;
+}
+#button{
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+input[type=text],input[type=Number], select {
+width: 50%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 50%;
+background-color: green;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: darkgreen;
+}
+#nameplace {
+margin-right: 530px;
+}
+#HPWplace{
+margin-right: 320px;
+}
+#MPHplace{
+margin-right: 350px;
+}
+#singlemarried{
+margin-right: 400px;
+}
+#dependents{
+margin-right: 350px;
+}
+h1 {
+font-size: 40px;
+}
+footer, h1 {
+color: lightsalmon;
+}
+nav {
+display: flex;
+margin-bottom: 40px;
+margin-top: -65px;
+padding-bottom: -10px;
+border-bottom: 1px solid #ddd;
+text-transform: uppercase;
+text-align: right;
+}
+nav ul{
+display: flex;
+align-items: right;
+color: white;
+text-align: right;
+}
+nav li{
+list-style-type: none;
+color: white;
+text-align: right;
+}
+nav h1{
+font-size: 3em;
+color: white;
+text-align: right;
+}
+nav p, nav a {
+color: #777; /*#777*/
+font-weight: 100;
+color: white;
+text-decoration: none;
+position: absolute;
+right: 400px;
+top: 90px;
+}
+nav a:hover {
+color: #777;
+}
+footer{
+text-align: center;
+margin: 80px auto 20px;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
