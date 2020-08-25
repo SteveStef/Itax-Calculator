@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/results.css">
+  <title><%= title %>Results Page</title>
+
+</head>
+<body>
+
+<div id="container">
+  <body>
+
+    <h1> ITax Calculator </h1><br><br>
+    <nav>
+      <ul>
+        <li><a href="/">ITax Form</a></li>
+      </ul>
+    </nav>
+
+<!--found all new model insatnces, asigned it to then empty array-->
+<h2>All Users</h2>
+
+<%if(infoArray.length > 0) {%>
+<% infoArray.forEach(arrayElement => { %>
+<div id="list">
+<ul>
+    <a href="/results/<%=arrayElement._id%>">
+    <li><p> <%= arrayElement.Name %> </p></li>
+    </a>
+</ul>
+</div>
+<%})%>
+<%}%>
+
+</div>
+</body>
+  <footer>Copyright &copy; 2020 ITax</footer>
+</html>
